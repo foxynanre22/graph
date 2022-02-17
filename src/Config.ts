@@ -3,9 +3,12 @@ export const config = {
   redirectUri: 'http://localhost:3000',
   scopes: [
     'user.read',
+    'user.readwrite',
+    'user.readwrite.all',
     'mailboxsettings.read',
     'calendars.readwrite',
     'chat.readwrite',
-    'chatmessage.send'
+    'chatmessage.send',
+    'user.read.all'
   ]
 };

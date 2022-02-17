@@ -96,8 +96,7 @@ export async function createEvent(accessToken: string, newEvent: Event): Promise
 
 export const getUserId = async (accessToken: string, userEmail: string) => {
   const client = getAuthenticatedClient(accessToken);
-
-  let resultGraph = await client.api(`/users/${userEmail}`).get();
+  let resultGraph = await client.api(`/users/23f551e991fc92f9`).get();
   return resultGraph.id;
 };
 

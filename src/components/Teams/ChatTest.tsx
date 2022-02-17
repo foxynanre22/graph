@@ -19,8 +19,8 @@ class ChatTest extends React.Component<AuthComponentProps, ChatState> {
             var accessToken = await this.props.getAccessToken(config.scopes);
   
             let currentUserId = await getCurrentUserId(accessToken);
-            let userIdToSendMessage = await getUserId(accessToken, "danyil.martin@fabrity.pl");
-            let chatOfUser = await createUsersChat(accessToken, userIdToSendMessage, currentUserId);
+            //let userIdToSendMessage = await getUserId(accessToken, "23f551e991fc92f9");
+            let chatOfUser = await createUsersChat(accessToken, "23f551e991fc92f9", currentUserId);
             let result = await sendMessage(accessToken, chatOfUser, "First Try");
             console.log(result);
             this.setState({messageSend:true});
@@ -34,7 +34,7 @@ class ChatTest extends React.Component<AuthComponentProps, ChatState> {
       return (
         <Button color="primary"
           className="mr-2"
-          onClick={this.onClick}>Send</Button>
+          onClick={this.onClick.bind(this)}>Send</Button>
       );
     }
   }
